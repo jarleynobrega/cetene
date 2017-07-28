@@ -1,2 +1,2 @@
 # cetene
-Reposoitório para os contêineres de projeto do CETENE
+Repositório para os contêineres de projeto do CETENE
