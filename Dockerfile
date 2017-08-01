@@ -8,6 +8,8 @@ RUN apt-get update -y && \
 RUN pip install keras h5py pillow opencv-python scikit-plot
 RUN apt-get install -y python3-tk cython git nano openssh-server
 
+RUN mkdir /var/run/sshd
+
 # Variaveis de ambiente
 ENV TERM xterm
 ENV PATH $PATH:$PATH:/usr/local/nvidia/bin/
@@ -17,7 +19,8 @@ RUN mkdir /var/run/sshd
 RUN echo 'root:cetene' | chpasswd
 RUN sed -i 's/Port 22/Port 2225/' /etc/ssh/sshd_config
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+#RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
 # Restart do servico
 # RUN /etc/init.d/ssh stop
@@ -25,4 +28,4 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 
 EXPOSE 2225
 
-CMD ["/usr/sbin/sshd", "&"]
+CMD ["/usr/sbin/sshd", "-D"]
