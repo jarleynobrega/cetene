@@ -23,4 +23,6 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 # RUN /etc/init.d/ssh stop
 # RUN /etc/init.d/ssh start
 
-CMD /usr/sbin/sshd && bash
+#CMD /usr/sbin/sshd && bash
+
+EXPOSE 2225
