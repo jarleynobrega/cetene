@@ -20,6 +20,6 @@ RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/s
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 
 # Restart do servico
-RUN /etc/init.d/ssh stop
-RUN /etc/init.d/ssh start
+# RUN /etc/init.d/ssh stop
+# RUN /etc/init.d/ssh start
 
