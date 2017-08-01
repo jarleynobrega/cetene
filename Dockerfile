@@ -8,8 +8,6 @@ RUN apt-get update -y && \
 RUN pip install keras h5py pillow opencv-python scikit-plot
 RUN apt-get install -y python3-tk cython git nano openssh-server
 
-RUN mkdir /var/run/sshd
-
 # Variaveis de ambiente
 ENV TERM xterm
 ENV PATH $PATH:$PATH:/usr/local/nvidia/bin/
