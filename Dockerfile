@@ -10,14 +10,14 @@ RUN apt-get install -y python3-tk cython git nano openssh-server
 
 # Variaveis de ambiente
 ENV TERM xterm
-ENV PATH $PATH:$PATH:/usr/local/nvidia/bin/
+ENV PATH /root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/bin:/sbin:/usr/local/nvidia/bin/
 
 # Configuracao do servidor SSH
 RUN mkdir /var/run/sshd
 RUN echo 'root:cetene' | chpasswd
 RUN sed -i 's/Port 22/Port 2225/' /etc/ssh/sshd_config
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
+#RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
 #EXPOSE 2225
 
