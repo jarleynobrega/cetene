@@ -19,6 +19,6 @@ RUN sed -i 's/Port 22/Port 2225/' /etc/ssh/sshd_config
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
-EXPOSE 2225
+#EXPOSE 2225
 
 #CMD ["/usr/sbin/sshd", "-D"]
