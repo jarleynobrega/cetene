@@ -23,5 +23,4 @@ RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/s
 
 #CMD ["/usr/sbin/sshd", "-D"]
 
-RUN /etc/init.d/ssh start
-CMD /bin/bash
+ENTRYPOINT /etc/init.d/ssh start && sleep 10 && /bin/bash
