@@ -8,7 +8,8 @@ RUN apt-get update -y && \
 RUN pip install keras h5py pillow opencv-python scikit-plot
 RUN apt-get install -y python3-tk cython git nano openssh-server
 
-ADD init.sh /usr/bin
+ADD init.sh /root
+RUN chmod +x /root/init.sh
 
-ENTRYPOINT ["/usr/bin/init.sh"]
+ENTRYPOINT ["/root/init.sh"]
 
