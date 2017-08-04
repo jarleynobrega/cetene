@@ -10,5 +10,5 @@ RUN apt-get install -y python3-tk cython git nano openssh-server
 
 ADD init.sh /usr/bin
 
-ENTRYPOINT["/usr/bin/init.sh"]
+ENTRYPOINT ["/usr/bin/init.sh"]
 
