@@ -6,6 +6,7 @@ export PATH=$PATH:/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/r
 apt-get update -y
 apt-get upgrade -y
 
+pip install h5py pillow opencv-python scikit-plot
 apt-get install -y python3-tk cython git nano openssh-server
 
 echo 'root:cetene' | chpasswd
