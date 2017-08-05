@@ -3,6 +3,11 @@
 export TERM xterm
 export PATH=$PATH:/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/bin:/sbin:/usr/local/nvidia/bin/
 
+apt-get update -y
+apt-get upgrade -y
+
+apt-get install -y python3-tk cython git nano openssh-server
+
 echo 'root:cetene' | chpasswd
 sed -i 's/Port 22/Port 2225/' /etc/ssh/sshd_config
 sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
