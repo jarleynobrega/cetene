@@ -19,7 +19,9 @@ FROM tensorflow/tensorflow:1.0.1-gpu-py3
 #RUN /etc/init.d/ssh start && sleep 10
 
 COPY ./init.sh .
-RUN /bin/bash init.sh
+#RUN /bin/bash init.sh
+ENTRYPOINT ["/bin/bash"]
+CMD ["init.sh"]
 
 
 
