@@ -9,9 +9,10 @@ apt-get upgrade -y
 pip install h5py pillow opencv-python scikit-plot
 apt-get install -y python3-tk cython git nano openssh-server
 
-echo 'root:cetene' | chpasswd
 sed -i 's/Port 22/Port 2225/' /etc/ssh/sshd_config
 sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+
+echo 'root:cetene' | chpasswd
 
 /etc/init.d/ssh stop
 sleep 10
