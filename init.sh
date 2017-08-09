@@ -19,3 +19,5 @@ sleep 10
 /etc/init.d/ssh start
 sleep 10
 
+exit 0
+
