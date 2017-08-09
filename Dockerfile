@@ -5,7 +5,7 @@ FROM tensorflow/tensorflow:1.0.1-gpu-py3
 #    apt-get upgrade -y
 
 # Instalacao dos principais pacotes de Python para deep learning
-#RUN pip install keras h5py pillow opencv-python scikit-plot
+RUN pip install keras h5py pillow opencv-python scikit-plot
 #RUN apt-get install -y python3-tk cython git nano openssh-server
 
 #RUN sed -i 's/Port 22/Port 2225/' /etc/ssh/sshd_config
@@ -20,8 +20,8 @@ FROM tensorflow/tensorflow:1.0.1-gpu-py3
 
 COPY ./init.sh .
 #RUN /bin/bash init.sh
-ENTRYPOINT ["/bin/bash"]
-CMD ["init.sh"]
+#ENTRYPOINT ["/bin/bash"]
+#CMD ["init.sh"]
 
 
 
