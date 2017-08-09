@@ -6,7 +6,7 @@ export PATH=$PATH:/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/r
 apt-get update -y
 apt-get upgrade -y
 
-pip install keras h5py pillow opencv-python scikit-plot
+#pip install keras h5py pillow opencv-python scikit-plot
 apt-get install -y python3-tk cython git nano openssh-server
 
 sed -i 's/Port 22/Port 2225/' /etc/ssh/sshd_config
