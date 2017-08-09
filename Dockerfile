@@ -11,7 +11,11 @@ RUN apt-get install -y python3-tk cython git nano openssh-server
 RUN sed -i 's/Port 22/Port 2225/' /etc/ssh/sshd_config
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
+RUN export TERM=xterm
+RUN export PATH=$PATH:/usr/local/nvidia/bin/
+
 RUN echo 'root:cetene' | chpasswd
-RUN /etc/init.d/ssh start
+RUN /etc/init.d/ssh stop && sleep 10
+RUN /etc/init.d/ssh start && sleep 10
 
 
