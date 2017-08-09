@@ -23,7 +23,7 @@ COPY ./init.sh .
 #ENTRYPOINT ["/bin/bash"]
 #CMD ["init.sh"]
 
-CMD /bin/bash init.sh
+CMD exec /bin/bash init.sh
 #CMD ["/bin/bash", "-c", "init.sh"]
 
 
