@@ -8,7 +8,7 @@ apt-get upgrade -y
 apt-get install -y python3-tk cython git nano openssh-server
 
 # Configuracao do servidor SSH para acesso externo
-sed -i 's/Port 22/Port 2225/' /etc/ssh/sshd_config
+sed -i 's/Port 22/Port "$1"/' /etc/ssh/sshd_config
 sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 # Senha padrao do root do container
