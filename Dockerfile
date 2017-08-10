@@ -23,8 +23,8 @@ COPY ./init.sh .
 #ENTRYPOINT ["/bin/bash"]
 #CMD ["init.sh"]
 
-#CMD /bin/bash init.sh 
-CMD exec /bin/bash -c "/notebooks/init.sh; trap : TERM INT; sleep infinity & wait"
+CMD /bin/bash init.sh; trap : TERM INT; sleep infinity & wait 
+#CMD exec /bin/bash -c "/notebooks/init.sh; trap : TERM INT; sleep infinity & wait"
 #CMD ["/bin/bash", "-c", "init.sh"]
 
 
