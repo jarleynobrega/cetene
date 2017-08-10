@@ -24,7 +24,7 @@ COPY ./init.sh .
 #CMD ["init.sh"]
 
 #CMD /bin/bash init.sh 
-CMD exec /bin/bash -c "init.sh; trap : TERM INT; sleep infinity & wait"
+CMD exec /bin/bash -c "/notebooks/init.sh; trap : TERM INT; sleep infinity & wait"
 #CMD ["/bin/bash", "-c", "init.sh"]
 
 
