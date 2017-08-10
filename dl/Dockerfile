@@ -1,14 +1,14 @@
-FROM tensorflow/tensorflow:latest-gpu-py3
+FROM tensorflow/tensorflow:1.0.1-gpu-py3
 
-# Atualizacao dos pacotes da imagem do Ubuntu
-RUN apt-get update -y && \
-    apt-get upgrade -y
-
-# Instalacao dos principais pacotes de Python
+# Instalacao inicial dos principais pacotes de Python para deep learning
 RUN pip install keras h5py pillow opencv-python scikit-plot
-RUN apt-get install -y python3-tk cython git nano openssh-server
 
-ADD init.sh /usr/bin
+# Copia do script de inicializacao e configuracao do container
+COPY ./init.sh .
 
-ENTRYPOINT["/usr/bin/init.sh"]
+# Execucao do script e sleep para evitar o restart do container
+CMD /bin/bash init.sh; trap : TERM INT; sleep infinity & wait 
+
+
+
 
