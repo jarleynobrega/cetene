@@ -9,8 +9,12 @@ apt-get upgrade -y
 # Instalacao de pacotes adicionais de Python
 apt-get install -y python3-tk cython git nano openssh-server libblas-dev liblapack-dev
 
+# Instalacao do R
+apt-get install -y r-base libcupti-dev
+
 # Instalacao do PyTorch e torchvision
-pip3 install http://download.pytorch.org/whl/cu80/torch-0.1.12.post2-cp35-cp35m-linux_x86_64.whl
+# pip3 install http://download.pytorch.org/whl/cu80/torch-0.1.12.post2-cp35-cp35m-linux_x86_64.whl
+pip3 install http://download.pytorch.org/whl/cu80/torch-0.2.0.post3-cp35-cp35m-manylinux1_x86_64.whl 
 pip3 install torchvision
 
 # Configuracao do servidor SSH para acesso externo
