@@ -12,6 +12,9 @@ apt-get install -y python3-tk cython git nano openssh-server libblas-dev liblapa
 # Instalacao do R
 apt-get install -y r-base
 
+# Instalacao do Screen
+apt-get install -y screen
+
 # Instalacao do PyTorch e torchvision
 pip3 install http://download.pytorch.org/whl/cu80/torch-0.2.0.post3-cp35-cp35m-manylinux1_x86_64.whl 
 pip3 install torchvision
