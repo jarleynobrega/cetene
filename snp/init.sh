@@ -13,7 +13,7 @@ apt-get install -y python3-tk cython git nano openssh-server libblas-dev liblapa
 apt-get install -y libncurses5-dev libbz2-dev liblzma-dev default-jdk parallel ​
 
 # Instalacao do R
-#apt-get install -y r-base
+apt-get install -y r-base
 
 # Instalacao do Screen
 apt-get install -y screen
