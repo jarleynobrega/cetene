@@ -1,9 +1,9 @@
-FROM tensorflow/tensorflow:1.0.1-gpu-py3
+FROM tensorflow/tensorflow:latest-gpu-py3
 
 USER root:root
 
-# Instalacao inicial dos principais pacotes de Python para deep learning
-RUN pip install keras h5py pillow opencv-python scikit-plot pandas
+# Instalacao inicial do pacote pandas
+RUN pip install pandas
 
 # Copia do script de inicializacao e configuracao do container
 COPY ./init.sh .
