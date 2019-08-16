@@ -10,14 +10,13 @@ apt-get upgrade -y
 apt-get install -y python3-tk cython git nano openssh-server libblas-dev liblapack-dev
 
 # Instalacao do R
-apt-get install -y r-base
+# apt-get install -y r-base
 
 # Instalacao do Screen
 apt-get install -y screen
 
 # Instalacao do PyTorch e torchvision
-pip3 install http://download.pytorch.org/whl/cu80/torch-0.2.0.post3-cp35-cp35m-manylinux1_x86_64.whl 
-pip3 install torchvision
+pip3 install torch torchvision
 
 # Configuracao do servidor SSH para acesso externo
 sed -i "s/Port 22/Port $1/" /etc/ssh/sshd_config
