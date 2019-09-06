@@ -21,7 +21,7 @@ pip3 install torch torchvision
 # Configuracao do servidor SSH para acesso externo
 sed -i "s/#Port 22/Port $1/" /etc/ssh/sshd_config
 sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-sed -i 's/Subsystem       sftp    /usr/lib/openssh/sftp-server/Subsystem sftp internal-sftp' /etc/ssh/sshd_config
+sed -i 's/\/usr\/lib\/openssh\/sftp-server/internal-sftp/g' /etc/ssh/sshd_config
 
 /etc/init.d/ssh stop
 sleep 10
